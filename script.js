@@ -9,7 +9,8 @@ const author = document.querySelector("#author");
 const title = document.querySelector("#title");
 const pages = document.querySelector("#pages");
 const read = document.querySelector('input[name="completed"]:checked');
-
+const completed = document.querySelector("#completed");
+const notCompleted = document.querySelector("#notCompleted");
 
 
 function Book(title, author, pages, completed) {
@@ -38,6 +39,12 @@ confirmBtn.addEventListener("click", (e) => {
   let book = new Book(title.value, author.value, pages.value, radioValue());
   myLibrary.push(book);
   display();
+  title.value = "";
+  author.value = "";
+  pages.value = "";
+  completed.checked = false;
+  notCompleted.checked = false;
+
 });
 
 function createCard(book, i) {
@@ -112,10 +119,9 @@ function remove(card) {
 
 
 function radioValue() {
-    if(document.querySelector("#completed").checked) {
+    if(completed.checked) {
         return true;
-    }
-    if(document.querySelector("#notCompleted").checked) {
+    }if(notCompleted.checked) {
         return false;
     }
 }
