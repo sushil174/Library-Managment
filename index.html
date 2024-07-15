@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Managment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <dialog id="dialog">
+        <form>
+            <ul class="inputs">
+                <li>
+                    <label for="title">Title</label>
+                    <input type="text" id="title" name="book-title" required>
+                </li>
+
+                <li>
+                    <label for="author">Author</label>
+                    <input type="text" id="author" name="book-author" required>
+                </li>
+
+                <li>
+                    <label for="pages">Pages</label>
+                    <input type="number" id="pages" name="book-pages" required>
+                </li>
+
+                <li>
+                    <label for="completed">Completed</label>
+                    <input type="text" id="completed" name="book-completed" required>
+                </li>
+                
+            </ul>
+
+            <div>
+
+                <button id= "cancelBtn" value="cancel" formmethod="dialog">Cancel</button>
+                <button id="confirmBtn" value="default">Confirm</button>
+
+            </div>
+
+        </form>
+
+    </dialog>
+    <div class="container">
+        <div class="header">
+            <h2>Library Managmenet</h2>
+            <button id="add">NEW BOOK</button>
+        </div>
+        <div class="main">
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
