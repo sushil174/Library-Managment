@@ -6,8 +6,7 @@
 body,
 html {
   margin: 0;
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
+  font-family: "Rajdhani", sans-serif;
   font-style: normal;
 }
 .container {
@@ -28,9 +27,7 @@ html {
 }
 .header h2 {
     margin: 0;
-    font-family: norse;
     font-size: 3rem;
-    font-weight: 700;
 }
 
 .main {
@@ -124,13 +121,21 @@ form li label {
     align-self: center;
 }
 
-.header button {
-    font-size: 1.25rem;
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: 10px;
-    font-weight: 600;
+#add {
+    position: fixed;
+    z-index: 10;
+    top: 85%;
+    left: 90%;
+    border-radius: 50%;
     background-color: #475569;
-    border: #64748b;
-    color: white;
+    border: none;
+    
+}
+#add:hover {
+    box-shadow:  1px 1px 20px #64748b,
+                -1px -1px 20px #64748b;
+}
+#add img {
+    height: 4rem;
+    width: auto;
 }
