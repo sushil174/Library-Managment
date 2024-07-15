@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library Managment</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -28,8 +33,11 @@
                 </li>
 
                 <li>
+                    <input type="radio" id="completed" name="completed" value="true" />
                     <label for="completed">Completed</label>
-                    <input type="text" id="completed" name="book-completed" required>
+
+                    <input type="radio" id="notCompleted" name="completed" value="false" />
+                    <label for="notCompleted">Not Completed</label>
                 </li>
                 
             </ul>
@@ -46,7 +54,7 @@
     </dialog>
     <div class="container">
         <div class="header">
-            <h2>Library Managmenet</h2>
+            <h2>Library Management </h2>
             <button id="add">NEW BOOK</button>
         </div>
         <div class="main">

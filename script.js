@@ -8,7 +8,9 @@ const confirmBtn = document.querySelector("#confirmBtn");
 const author = document.querySelector("#author");
 const title = document.querySelector("#title");
 const pages = document.querySelector("#pages");
-const completed = document.querySelector("#completed");
+const read = document.querySelector('input[name="completed"]:checked');
+
+
 
 function Book(title, author, pages, completed) {
   this.title = title;
@@ -32,7 +34,8 @@ cancel.addEventListener("click", (e) => {
 confirmBtn.addEventListener("click", (e) => {
   e.preventDefault();
   dialog.close();
-  let book = new Book(title.value, author.value, pages.value, completed.value);
+  
+  let book = new Book(title.value, author.value, pages.value, radioValue());
   myLibrary.push(book);
   display();
 });
@@ -72,10 +75,24 @@ function display() {
     main.append(card);
     let info = card.querySelector(".info");
     let button = info.querySelector("button");
+    if (book.completed) {
+      button.textContent = "Completed";
+      button.style.backgroundColor = "#22c55e";
+    } else {
+      button.textContent = "Not completed";
+      button.style.backgroundColor = "#a8a29e";
+    }
     if (button) {
       button.addEventListener("click", (e) => {
         book.toggle();
-        e.target.textContent = book.completed;
+
+        if (book.completed) {
+          button.textContent = "Completed";
+          button.style.backgroundColor = "#22c55e";
+        } else {
+          button.textContent = "Not completed";
+          button.style.backgroundColor = "#a8a29e";
+        }
       });
     }
     remove(card);
@@ -83,13 +100,22 @@ function display() {
 }
 
 function remove(card) {
-
-    const button = card.querySelector(".deleteBtn");
-    button.addEventListener("click", (e) => {
-      const element = myLibrary[card.dataset.index];
-      myLibrary = myLibrary.filter((book) => {
-        return book !== element;
-      });
-      display();
+  const button = card.querySelector(".deleteBtn");
+  button.addEventListener("click", (e) => {
+    const element = myLibrary[card.dataset.index];
+    myLibrary = myLibrary.filter((book) => {
+      return book !== element;
     });
+    display();
+  });
+}
+
+
+function radioValue() {
+    if(document.querySelector("#completed").checked) {
+        return true;
+    }
+    if(document.querySelector("#notCompleted").checked) {
+        return false;
+    }
 }

@@ -1,29 +1,136 @@
-body {
-    margin: 0;
-    padding: 0;
+@font-face {
+    font-family: norse;
+    src: url(Norse-Bold.otf);
+  }
+
+body,
+html {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+.container {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 8fr;
+
 }
 .header {
-    background-color: bisque;
+    background-color: #64748b;
     display: flex;
+    color: white;
     justify-content: space-between;
-    padding: 2em 5%;    
+    padding: 2em;
+    padding-right: 5%;
+    box-shadow: 1px 1px 2px #475569;
+    z-index: 1;
 }
 .header h2 {
     margin: 0;
+    font-family: norse;
+    font-size: 3rem;
+    font-weight: 700;
 }
 
 .main {
     display: grid;
     grid-template-columns: repeat(auto-fill , minmax(250px,1fr));
     gap: 15px;
+    padding: 1.25rem;
+    background-color: #e2e8f0;
 }
 .card {
     background-color: rgb(255, 255, 255);   
-    padding: 20px;
+    padding: 2em;
     height: 200px;
     border: 1px solid rgb(66, 45, 45);
     border-radius: 10px;
     text-align: center;
     display: grid;
     grid-template-rows: 4fr 1fr;
+    border: none;
+    box-shadow: inset 8px -8px #475569,
+                2px 2px 5px #475569;
+    font-size: 18px;
+}
+
+.card .deleteBtn {
+    background-color: #f87171;
+    color: white;
+    border-radius: 10px;
+    border: none;
+}
+
+.info button {
+    background-color: #f87171;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    padding: 0.5em 1em;
+    font-size: 0.8em;
+    font-weight: 800;
+}
+
+form ul li{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 1em;
+}
+
+form ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    font-size: 20px;
+    padding : 20px;
+}
+dialog {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px #475569;
+}
+form div {
+    align-self: flex-end;
+}
+
+form div button {
+    margin: 10px;
+    padding: 10px;
+    font-size: 0.8em;
+    border: none;
+    border-radius: 15px;
+    padding: 1em 2em;
+    background-color: #475569;
+    color: white;
+}
+
+form input {
+    font-size: 1.2rem;
+    padding: 1.2em;
+    background-color: #e2e8f0;
+    border: none;
+    border-radius: 10px;
+}
+
+form li label {
+    align-self: center;
+}
+
+.header button {
+    font-size: 1.25rem;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    background-color: #475569;
+    border: #64748b;
+    color: white;
 }
