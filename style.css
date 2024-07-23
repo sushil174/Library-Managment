@@ -46,6 +46,7 @@ html {
     text-align: center;
     display: grid;
     grid-template-rows: 4fr 1fr;
+    gap: 0.8em;
     border: none;
     box-shadow: inset 8px -8px #475569,
                 2px 2px 5px #475569;
@@ -132,8 +133,7 @@ form li label {
     
 }
 #add:hover {
-    box-shadow:  1px 1px 20px #64748b,
-                -1px -1px 20px #64748b;
+    background-color: #334155;
 }
 #add img {
     height: 4rem;
