@@ -13,12 +13,15 @@ const completed = document.querySelector("#completed");
 const notCompleted = document.querySelector("#notCompleted");
 
 
-function Book(title, author, pages, completed) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.completed = completed;
-  this.toggle = function () {
+class Book {
+  constructor(title, author, pages, completed) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.completed = completed;
+  }
+  
+  toggle() {
     this.completed = !this.completed;
   };
 }
