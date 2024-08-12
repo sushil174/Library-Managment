@@ -19,25 +19,28 @@
         <form>
             <ul class="inputs">
                 <li>
-                    <label for="title">Title</label>
-                    <input type="text" id="title" name="book-title" required>
+                        <label for="title">Title</label>
+                        <input type="text" id="title" name="book-title" required/>
+                        <span class="titleError error" aria-live="polite"></span>
                 </li>
 
                 <li>
                     <label for="author">Author</label>
-                    <input type="text" id="author" name="book-author" required>
+                        <input type="text" id="author" name="book-author" required/>
+                        <span class="authorError error" aria-live="polite"></span>
                 </li>
 
                 <li>
                     <label for="pages">Pages</label>
-                    <input type="number" id="pages" name="book-pages" required>
+                    <input type="number" id="pages" name="book-pages" required/>
+                    <span class="pagesError error" aria-live="polite"></span>
                 </li>
 
                 <li>
-                    <input type="radio" id="completed" name="completed" value="true" />
+                    <input type="radio" id="completed" name="completed" value="true" required/>
                     <label for="completed">Completed</label>
 
-                    <input type="radio" id="notCompleted" name="completed" value="false" />
+                    <input type="radio" id="notCompleted" name="completed" value="false" required/>
                     <label for="notCompleted">Not Completed</label>
                 </li>
                 
@@ -46,7 +49,7 @@
             <div>
 
                 <button id= "cancelBtn" value="cancel" formmethod="dialog">Cancel</button>
-                <button id="confirmBtn" value="default">Confirm</button>
+                <button id="confirmBtn" value="default" type="submit">Confirm</button>
 
             </div>
 

@@ -73,14 +73,17 @@ html {
 form ul li{
     display: grid;
     grid-template-columns: 1fr 3fr;
-    gap: 1em;
+    /* gap: 1em; */
 }
-
+form ul li span{
+    padding: 0.1em;
+    grid-column-start: 2;
+}
 form ul {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 2em;
+    margin-top: 1em;
 }
 
 form {
@@ -111,11 +114,12 @@ form div button {
 }
 
 form input {
-    font-size: 1.2rem;
-    padding: 1.2em;
+    font-size: 1rem;
+    padding: 1.1em;
     background-color: #e2e8f0;
     border: none;
     border-radius: 10px;
+    margin-top: 1em;
 }
 
 form li label {
@@ -139,3 +143,29 @@ form li label {
     height: 4rem;
     width: auto;
 }
+
+
+/* This is our style for the invalid fields */
+input:invalid {
+    border-color: #900;
+    background-color: #fdd;
+  }
+  
+  input:focus:invalid {
+    outline: none;
+  }
+  
+  /* This is the style of our error messages */
+  .error {
+    width: 100%;
+    padding: 0;
+    font-size: 80%;
+    color: #900;;
+    border-radius: 0 0 5px 5px;
+    box-sizing: border-box;
+  }
+  
+  .error.active {
+    padding: 0.3em;
+  }
+

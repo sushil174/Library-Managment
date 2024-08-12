@@ -11,7 +11,48 @@ const pages = document.querySelector("#pages");
 const read = document.querySelector('input[name="completed"]:checked');
 const completed = document.querySelector("#completed");
 const notCompleted = document.querySelector("#notCompleted");
+const titleError = document.querySelector('.titleError')
+const authorError = document.querySelector('.authorError')
+const pagesError = document.querySelector('.pagesError')
 
+
+
+title.addEventListener('input', ()=> {
+  if(title.validity.valid){
+    titleError.textContent = ''
+    titleError.classList.remove('active')
+  }
+})
+
+author.addEventListener('input', ()=> {
+  if(author.validity.valid){
+    authorError.textContent = ''
+    authorError.classList.remove('active')
+  }
+})
+
+pages.addEventListener('input', ()=> {
+  if(pages.validity.valid){
+    pagesError.textContent = ''
+    pagesError.classList.remove('active')
+  }
+})
+function showError() {
+  if(title.validity.valueMissing) {
+      titleError.textContent = "*please Enter title";
+      titleError.classList.add('active')
+  }
+
+  if(pages.validity.valueMissing) {
+    pagesError.textContent = "*please Enter pages";
+    pagesError.classList.add('active')
+  }
+
+  if(author.validity.valueMissing) {
+    authorError.textContent = "*please Enter author name";
+    authorError.classList.add('active')
+  } 
+}
 
 class Book {
   constructor(title, author, pages, completed) {
@@ -31,24 +72,33 @@ addBook.addEventListener("click", (e) => {
 });
 
 cancel.addEventListener("click", (e) => {
+  titleError.textContent = ''
+  titleError.classList.remove('active')
+  authorError.textContent = ''
+  authorError.classList.remove('active')
+  pagesError.textContent = ''
+  pagesError.classList.remove('active')
   e.preventDefault();
   dialog.close();
 });
 
 confirmBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  dialog.close();
-  
-  let book = new Book(title.value, author.value, pages.value, radioValue());
-  myLibrary.push(book);
-  display();
-  title.value = "";
-  author.value = "";
-  pages.value = "";
-  completed.checked = false;
-  notCompleted.checked = false;
-
-});
+  if(!title.validity.valid || !author.validity.valid || !pages.validity.valid) {
+    showError()
+  }
+  else{
+    dialog.close();
+    let book = new Book(title.value, author.value, pages.value, radioValue());
+    myLibrary.push(book);
+    display();
+    title.value = "";
+    author.value = "";
+    pages.value = "";
+    completed.checked = false;
+    notCompleted.checked = false;
+  }
+}); 
 
 function createCard(book, i) {
   let card = document.createElement("div");
@@ -128,4 +178,7 @@ function radioValue() {
         return false;
     }
 }
+
+
+
 
